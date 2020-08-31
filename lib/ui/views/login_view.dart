@@ -59,7 +59,7 @@ class LoginView extends StatelessWidget {
                 TextLink(
                   'Lag en konto hvis du er ny',
                   onPressed: () {
-                    // TODO: Handle navigation
+                    model.navigateToSignUp();
                   },
                 )
               ],

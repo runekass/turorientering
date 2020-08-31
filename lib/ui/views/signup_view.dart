@@ -4,18 +4,20 @@ import 'package:turorientering/ui/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:turorientering/viewmodels/signup_view_model.dart';
+import 'package:turorientering/ui/shared/app_colors.dart';
 
 class SignUpView extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final fullNameController = TextEditingController();
-  final phoneController = TextEditingController();
+  final mobileController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SignUpViewModel>.reactive(
       viewModelBuilder: () => SignUpViewModel(),
       builder: (context, model, child) => Scaffold(
+        backgroundColor: darkBlue,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
           child: Column(
@@ -24,9 +26,10 @@ class SignUpView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Sign Up',
+                'Registrering',
                 style: TextStyle(
                   fontSize: 38,
+                  color: Colors.white,
                 ),
               ),
               verticalSpaceLarge,
@@ -37,7 +40,7 @@ class SignUpView extends StatelessWidget {
               verticalSpaceSmall,
               InputField(
                 placeholder: 'Mobil',
-                controller: phoneController,
+                controller: mobileController,
               ),
               InputField(
                 placeholder: 'Epost',
@@ -62,6 +65,8 @@ class SignUpView extends StatelessWidget {
                       model.signUp(
                         email: emailController.text,
                         password: passwordController.text,
+                        fullName: fullNameController.text,
+                        mobile: mobileController.text,
                       );
                     },
                   )
