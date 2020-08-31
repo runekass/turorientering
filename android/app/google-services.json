@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "727188231621",
+    "firebase_url": "https://turorientering-7ae3b.firebaseio.com",
+    "project_id": "turorientering-7ae3b",
+    "storage_bucket": "turorientering-7ae3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727188231621:android:3bd81815cc4e2635e267ac",
+        "android_client_info": {
+          "package_name": "com.vanvikil.turorientering"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727188231621-9pjffia74uuqmpup1cungd0vpg95ta4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXw-UqkUlbmR-4csCcells8Hz68pbH0O8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727188231621-9pjffia74uuqmpup1cungd0vpg95ta4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
