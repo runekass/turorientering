@@ -5,6 +5,7 @@ import 'package:turorientering/services/dialog_service.dart';
 import 'package:turorientering/services/navigation_service.dart';
 import 'package:flutter/foundation.dart';
 
+
 import 'base_model.dart';
 
 class SignUpViewModel extends BaseModel {

@@ -1,3 +1,4 @@
+import 'package:turorientering/constants/route_names.dart';
 import 'package:turorientering/ui/shared/ui_helper.dart';
 import 'package:turorientering/ui/widgets/busy_button.dart';
 import 'package:turorientering/ui/widgets/input_field.dart';
@@ -5,12 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:turorientering/viewmodels/signup_view_model.dart';
 import 'package:turorientering/ui/shared/app_colors.dart';
+import 'package:turorientering/services/navigation_service.dart';
+import 'package:turorientering/locator.dart';
 
 class SignUpView extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final fullNameController = TextEditingController();
   final mobileController = TextEditingController();
+  final NavigationService _navigationService = locator<NavigationService>();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,6 @@ class SignUpView extends StatelessWidget {
                 placeholder: 'Navn',
                 controller: fullNameController,
               ),
-              verticalSpaceSmall,
               InputField(
                 placeholder: 'Mobil',
                 controller: mobileController,
@@ -54,24 +57,33 @@ class SignUpView extends StatelessWidget {
                 additionalNote: 'Passordet må være minumum 6 tegn.',
               ),
               verticalSpaceMedium,
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  BusyButton(
-                    title: 'Registrer',
-                    busy: model.busy,
-                    onPressed: () {
-                      model.signUp(
-                        email: emailController.text,
-                        password: passwordController.text,
-                        fullName: fullNameController.text,
-                        mobile: mobileController.text,
-                      );
-                    },
-                  )
-                ],
-              )
+              // TODO Create login button to redirect back to login view
+              Container(
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BusyButton(
+                      title: 'Innlogging',
+                      busy: model.busy,
+                      onPressed: () {
+                        _navigationService.navigateTo(LoginViewRoute);
+                      },
+                    ),
+                    BusyButton(
+                      title: 'Registrer',
+                      busy: model.busy,
+                      onPressed: () {
+                        model.signUp(
+                          email: emailController.text,
+                          password: passwordController.text,
+                          fullName: fullNameController.text,
+                          mobile: mobileController.text,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
