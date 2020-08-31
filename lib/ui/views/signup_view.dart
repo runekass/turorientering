@@ -32,7 +32,7 @@ class SignUpView extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              verticalSpaceLarge,
+              verticalSpaceMedium,
               InputField(
                 placeholder: 'Navn',
                 controller: fullNameController,

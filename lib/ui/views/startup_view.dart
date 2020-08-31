@@ -25,7 +25,7 @@ class StartUpView extends StatelessWidget {
               CircularProgressIndicator(
                 strokeWidth: 3,
                 valueColor: AlwaysStoppedAnimation(
-                  Color(0xff19c7c1),
+                  Colors.white70,
                 ),
               )
             ],
